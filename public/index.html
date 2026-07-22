@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeSnippetVault</title>
+  <meta name="description" content="Modern code snippet manager" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">💾 CodeSnippetVault</div>
+      <div class="header-actions">
+        <input type="text" class="search-input" id="searchInput" placeholder="Cerca snippet..." />
+        <button class="btn btn-primary" id="addBtn">+ Nuovo</button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Lingue</h3>
+        <div class="tag-list" id="langList"></div>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Tag</h3>
+        <div class="tag-list" id="tagList"></div>
+      </div>
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Statistiche</h3>
+        <div class="stats" id="stats"></div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="snippet-grid" id="snippetGrid">
+        <div class="empty-state">Nessuno snippet. Creane uno!</div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Nuovo Snippet</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <form class="modal-form" id="snippetForm">
+        <input type="hidden" id="snippetId" />
+        <div class="form-group">
+          <label>Titolo</label>
+          <input type="text" class="form-input" id="title" required />
+        </div>
+        <div class="form-group">
+          <label>Linguaggio</label>
+          <select class="form-input" id="language">
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="bash">Bash</option>
+            <option value="css">CSS</option>
+            <option value="html">HTML</option>
+            <option value="json">JSON</option>
+            <option value="sql">SQL</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+            <option value="typescript">TypeScript</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Codice</label>
+          <textarea class="form-textarea" id="code" rows="8" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Tag (separati da virgola)</label>
+          <input type="text" class="form-input" id="tags" placeholder="es. utility, helper" />
+        </div>
+        <div class="form-group">
+          <label>Descrizione</label>
+          <textarea class="form-textarea" id="description" rows="2" placeholder="Descrizione breve..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Annulla</button>
+          <button type="submit" class="btn btn-primary">Salva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</arg_value></tool_call>
